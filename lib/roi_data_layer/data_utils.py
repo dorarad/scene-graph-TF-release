@@ -28,7 +28,7 @@ def create_graph_data(num_roi, num_rel, relations):
         for j in xrange(num_roi):
             out_inds = roi_rel_inds[i,j]
             in_inds = roi_rel_inds[j,i]
-            if out_inds >= 0 and in_inds >= 0:
+            if out_inds >= 0 or in_inds >= 0:
                 out_inds = out_inds if out_inds >=0 else num_rel
                 in_inds = in_inds if in_inds >=0 else num_rel
                 mask_inds.append([out_inds, in_inds])
